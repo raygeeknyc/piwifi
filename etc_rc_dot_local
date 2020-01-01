@@ -1,6 +1,6 @@
 # Add this before the exit statement
 
-sbin/swapoff -a
+/sbin/swapoff -a
 
 set clobber
 /bin/mkdir -p /boot/files
