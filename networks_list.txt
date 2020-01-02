@@ -6,7 +6,7 @@
 #############################
 
 # here is a network that requires a passsword
-thetardis,setme
+thetardis,<setme>
 # here is an open network
 GoogleGuest-Legacy
 # here is another network that requires a password
