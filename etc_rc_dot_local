@@ -1,7 +1,5 @@
 # Add this before the exit statement
 
-/sbin/swapoff -a
-
 set clobber
 /bin/mkdir -p /boot/files
 if [ ! -r /boot/files/networks_list.txt ]; then
