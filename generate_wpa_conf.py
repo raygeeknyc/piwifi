@@ -1,4 +1,5 @@
 import sys
+HIDDEN_FLAG='hidden'
 
 def generate_conf_header(conf_file):
         conf_file.write(
@@ -36,9 +37,13 @@ network={
         '''
         conf_file.write(stanza)
 
-def generate_wpa2_network(conf_file, ssid, psk):
+def generate_wpa2_network(conf_file, ssid, psk, hidden=False):
         stanza = '''
 network={
+        '''
+        if hidden:
+        	stanza = stanza + 'scan_ssid=1'
+        stanza = stanza + '''
         ''' + 'ssid="{}"'.format(ssid) + '''
         key_mgmt=WPA-PSK
         ''' + 'psk="{}"'.format(psk) + '''
@@ -60,6 +65,8 @@ def generate_configuration(networks_filename, conf_filename):
                         generate_open_network(conf_file, tokens[0])
                 elif len(tokens) == 2:
                         generate_wpa2_network(conf_file, tokens[0], tokens[1])
+                elif len(tokens) == 3 and tokens[2] == HIDDEN_FLAG:
+                        generate_wpa2_network(conf_file, tokens[0], tokens[1], hidden=True)
                 else:
                         sys.stderr.write('invalid line "{}"\n'.format(line))
         generate_conf_footer(conf_file)

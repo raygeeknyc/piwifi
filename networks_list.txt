@@ -11,3 +11,5 @@ thetardis,<setme>
 GoogleGuest-Legacy
 # here is another network that requires a password
 mycafe,brooklyncoffee
+# here is a hidden network that requires a password
+myownwifi,toomuchncoffee,hidden
