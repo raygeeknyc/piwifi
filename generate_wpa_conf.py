@@ -42,9 +42,9 @@ def generate_wpa2_network(conf_file, ssid, psk, hidden=False):
 network={
         '''
         if hidden:
-        	stanza = stanza + 'scan_ssid=1'
-        stanza = stanza + '''
-        ''' + 'ssid="{}"'.format(ssid) + '''
+        	stanza = stanza + 'scan_ssid=1' + '''
+	'''
+        stanza = stanza + 'ssid="{}"'.format(ssid) + '''
         key_mgmt=WPA-PSK
         ''' + 'psk="{}"'.format(psk) + '''
 }
