@@ -6,3 +6,4 @@ if [ ! -r /boot/files/networks_list.txt ]; then
   cp /home/pi/Documents/workspace/piwifi/networks_list.txt /boot/files/networks_list.txt
 fi
 /usr/bin/python /home/pi/Documents/workspace/piwifi/generate_wpa_conf.py  /boot/files/networks_list.txt /etc/wpa_supplicant/wpa_supplicant.conf
+/usr/bin/python/home/pi/Documents/workspace/piwifi/startupinfo.py &
